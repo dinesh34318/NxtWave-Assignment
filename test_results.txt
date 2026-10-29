@@ -1,0 +1,34 @@
+PASS gmail dots+alias normalised
+PASS phone +91 stripped
+PASS valid record passes
+PASS bad phone caught
+PASS wrong batch caught
+PASS disposable email caught
+PASS unique codes
+PASS first registration valid & attributed
+PASS referral code created for registrant
+PASS duplicate via email alias detected
+PASS duplicate via phone detected
+PASS unknown code -> direct, still counted
+PASS credit stays with first-touch source
+PASS totals add up
+PASS short name rejected
+PASS csv import counts
+PASS csv missing columns rejected
+Scenarios (net valid): { low: 167, base: 501, high: 800 }
+PASS base scenario ~500 net
+PASS low < base < high
+Demo day-4 valid: 243 target 320 ratio 0.76 amber subs 322 dup 39 inv 40 projected 468
+amber: Pace is 76% of the day-4 target (243 vs 320)
+amber: 14 ambassador/community sources have zero clicks
+amber: 3 sources get clicks but few valid registrations
+amber: Duplicate rate 12% (above 12%)
+green: Double down on: Kavya Kumar (29), Yash Joshi (24), Mohit Khan (19)
+amber: Paid test: ₹67 per valid registration (₹600 spent, 9 valid)
+PASS demo has data
+PASS demo is clearly flagged simulated
+PASS every valid reg has a unique id
+PASS decision engine returns actions
+PASS csv export roundtrip rows
+
+24 passed, 0 failed

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RefLoop - Referral, Attribution & Registration-Quality Tracker</title>
+<style>
+:root{--bg:#0f1420;--panel:#171e2e;--panel2:#1d2639;--line:#2a3550;--text:#e8edf7;--mute:#93a0ba;--brand:#5b8cff;--green:#34c38f;--amber:#f5b942;--red:#ef5b5b}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.45}
+header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+h1{font-size:18px;margin:0}h1 small{color:var(--mute);font-weight:400;font-size:12px;margin-left:8px}
+.sim{background:#3a2d0f;color:var(--amber);border:1px solid #6b5216;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600}
+.sp{flex:1}
+nav{display:flex;gap:4px;padding:0 20px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{background:none;border:0;color:var(--mute);padding:11px 14px;cursor:pointer;font-size:14px;border-bottom:2px solid transparent;white-space:nowrap}
+nav button.on{color:var(--text);border-bottom-color:var(--brand)}
+main{padding:20px;max-width:1200px;margin:0 auto}
+.grid{display:grid;gap:14px}.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h3{margin:0 0 8px;font-size:13px;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.kpi .v{font-size:28px;font-weight:700}.kpi .s{color:var(--mute);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}th{color:var(--mute);font-weight:600;font-size:12px}
+td.n,th.n{text-align:right}
+.tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:600}
+.green{background:#143a2d;color:var(--green)}.amber{background:#3a2d0f;color:var(--amber)}.red{background:#3f1a1a;color:var(--red)}.gray{background:#232c40;color:var(--mute)}
+.act{border-left:3px solid var(--line);padding:8px 12px;margin-bottom:8px;background:var(--panel2);border-radius:0 8px 8px 0}
+.act.green{border-left-color:var(--green);color:var(--text)}.act.amber{border-left-color:var(--amber);color:var(--text)}.act.red{border-left-color:var(--red);color:var(--text)}
+.act b{display:block}.act span{color:var(--mute);font-size:13px}
+label{display:block;font-size:12px;color:var(--mute);margin:8px 0 3px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:7px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+.err{color:var(--red);font-size:12px;margin-top:3px}
+button.btn{background:var(--brand);color:#fff;border:0;border-radius:7px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}
+button.btn.sec{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+button.btn:hover{filter:brightness(1.1)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>*{flex:1;min-width:130px}
+.msg{white-space:pre-wrap;background:#0b3d2e;color:#e6fff5;border-radius:10px;padding:12px;font-size:13px;border:1px solid #14634a}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;word-break:break-all}
+.note{color:var(--mute);font-size:12px}
+.scroll{overflow-x:auto}
+.ok{background:#143a2d;border:1px solid #1f6b50;border-radius:8px;padding:10px;margin-top:10px}
+.bad{background:#3f1a1a;border:1px solid #7a2c2c;border-radius:8px;padding:10px;margin-top:10px}
+.bar{height:8px;background:var(--line);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--brand)}
+</style>
+</head>
+<body>
+<header>
+  <h1>RefLoop <small>Referral, attribution &amp; registration-quality tracker</small></h1>
+  <span class="sim" id="simBadge">SIMULATED DEMO DATA</span>
+  <span class="sp"></span>
+  <label style="margin:0">Campaign day
+    <select id="daySel" style="width:auto;display:inline-block;margin-left:6px"></select></label>
+  <button class="btn sec" id="btnReset" title="Reload the simulated demo data">Reset demo</button>
+  <button class="btn sec" id="btnClear" title="Start empty for real use">Start empty</button>
+</header>
+<nav id="nav"></nav>
+<main id="view"></main>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
